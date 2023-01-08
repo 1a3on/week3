@@ -1,7 +1,5 @@
-
 const rootPath = "https://vue3-course-api.hexschool.io/";
 const apiPath = "charizard";
-
 
 const app = Vue.createApp({
     data(){         
@@ -14,8 +12,7 @@ const app = Vue.createApp({
     },
 
     methods:{   
-        login(){        
-            console.log("------->",this.loginData);
+        login(){              
             axios.post(`${rootPath}V2/admin/signin`,this.loginData)
                 .then(res=>{
                     const{token,expired} = res.data;      

@@ -56,8 +56,6 @@
   
   let productModal = null;
   let delProductModal = null;
-
-  
   
   const rootPath = "https://vue3-course-api.hexschool.io/V2/";
   const apiPath = "charizard";
@@ -108,7 +106,6 @@
               http_method = 'put';
               api =  `${rootPath}api/${apiPath}/admin/product/${this.tempProduct.id}`;
             }
-
             
             axios[http_method](api,{data: this.tempProduct})
             .then(res=>{
@@ -120,8 +117,7 @@
             .catch(err=>{        
               alert(`新增失敗:${err.data.message}`)
             });
-
-            
+        
         },
         openModal(ced,item){
           if(ced === 'create'){
@@ -168,10 +164,7 @@
         delProductModal = new bootstrap.Modal(document.getElementById("delProductModal"),{keyborad:false});
         const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1');   //先取出tocken存入apititle，才能進行確認
         axios.defaults.headers.common.Authorization = token;
-        this.checkLogin();
-
-       
-        
+        this.checkLogin();           
     }
 
   });
